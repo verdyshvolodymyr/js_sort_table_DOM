@@ -1,0 +1,2 @@
+document.addEventListener("click",function(t){var e=document.querySelector("table").querySelector("tbody"),r=Array.from(e.querySelectorAll("tr")),n=0;"Position"===t.target.textContent&&(n=1),"Age"===t.target.textContent&&(n=2),"Salary"===t.target.textContent&&(n=3),r.sort(function(t,e){var r=t.cells[n].textContent.trim(),o=e.cells[n].textContent.trim();return isNaN(r-o)?r.localeCompare(o):r-o}),r.forEach(function(t){return e.appendChild(t)})});
+//# sourceMappingURL=index.2bdef4c5.js.map
