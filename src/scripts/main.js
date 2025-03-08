@@ -6,7 +6,11 @@ function sortTable(e) {
   const table = document.querySelector('table');
   const tbody = table.querySelector('tbody');
   const rows = Array.from(tbody.querySelectorAll('tr'));
-  let index = 0;
+  let index;
+
+  if (e.target.textContent === 'Name') {
+    index = 0;
+  }
 
   if (e.target.textContent === 'Position') {
     index = 1;
