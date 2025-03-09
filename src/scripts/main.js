@@ -25,8 +25,13 @@ function sortTable(e) {
   }
 
   rows.sort((rowA, rowB) => {
-    const cellA = rowA.cells[index].textContent.trim();
-    const cellB = rowB.cells[index].textContent.trim();
+    let cellA = rowA.cells[index].textContent.trim();
+    let cellB = rowB.cells[index].textContent.trim();
+
+    if (index === 3) {
+       cellA = +rowA.cells[index].textContent.trim().split(',').join('').slice(1);
+       cellB = +rowB.cells[index].textContent.trim().split(',').join('').slice(1);
+    }
 
     return isNaN(cellA - cellB) ? cellA.localeCompare(cellB) : cellA - cellB;
   });
